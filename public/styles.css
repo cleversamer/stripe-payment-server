@@ -3,6 +3,8 @@
   grid-template-columns: repeat(2, 150px);
   grid-row-gap: 40px;
   grid-column-gap: 40px;
+  place-content: center;
+  padding-top: 20px;
 }
 
 button {
@@ -19,6 +21,7 @@ button {
 }
 
 button:hover {
+  transition-duration: 300ms;
   background-color: #333;
   color: #eee;
 }
@@ -32,4 +35,5 @@ button:active {
   font-size: 28px;
   font-weight: 700;
   color: #f00;
+  text-align: center;
 }

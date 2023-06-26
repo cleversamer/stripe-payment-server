@@ -20,8 +20,8 @@ app.post("/api/create-checkout-session", async (req, res) => {
       });
     }
 
-    const success_url = process.env.SERVER_URL;
-    const cancel_url = process.env.SERVER_URL;
+    const success_url = process.env.SERVER_URL + "/success.html";
+    const cancel_url = process.env.SERVER_URL + "/error.html";
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
