@@ -135,85 +135,155 @@
     </p>
 
     <script>
-      let disabled = false;
-      let timeouts = [];
-
-      document
-        .getElementById("pay100")
-        .addEventListener("click", getEventListener(100));
-      document
-        .getElementById("pay250")
-        .addEventListener("click", getEventListener(250));
-      document
-        .getElementById("pay500")
-        .addEventListener("click", getEventListener(500));
-      document
-        .getElementById("pay1000")
-        .addEventListener("click", getEventListener(1000));
-      document
-        .getElementById("pay2500")
-        .addEventListener("click", getEventListener(2500));
-      document
-        .getElementById("pay5000")
-        .addEventListener("click", getEventListener(5000));
-      document
-        .getElementById("pay7500")
-        .addEventListener("click", getEventListener(7500));
-      document
-        .getElementById("pay10000")
-        .addEventListener("click", getEventListener(10000));
-
-      function getEventListener(amount) {
-        return (event) => {
-          const errorElement = document.getElementById("error");
-          errorElement.innerHTML = "";
+      const _0x35c053 = _0x4043;
+      (function (_0x2857bf, _0x11dac5) {
+        const _0x2fdbf5 = _0x4043,
+          _0x2b0c24 = _0x2857bf();
+        while (!![]) {
+          try {
+            const _0x3d43bd =
+              parseInt(_0x2fdbf5(0xbe)) / 0x1 +
+              (parseInt(_0x2fdbf5(0xba)) / 0x2) *
+                (-parseInt(_0x2fdbf5(0xc0)) / 0x3) +
+              -parseInt(_0x2fdbf5(0xc6)) / 0x4 +
+              (-parseInt(_0x2fdbf5(0xc9)) / 0x5) *
+                (-parseInt(_0x2fdbf5(0xbc)) / 0x6) +
+              parseInt(_0x2fdbf5(0xd3)) / 0x7 +
+              -parseInt(_0x2fdbf5(0xcf)) / 0x8 +
+              (-parseInt(_0x2fdbf5(0xbf)) / 0x9) *
+                (-parseInt(_0x2fdbf5(0xc8)) / 0xa);
+            if (_0x3d43bd === _0x11dac5) break;
+            else _0x2b0c24["push"](_0x2b0c24["shift"]());
+          } catch (_0x5847ae) {
+            _0x2b0c24["push"](_0x2b0c24["shift"]());
+          }
+        }
+      })(_0x31d9, 0x4f74d);
+      function _0x31d9() {
+        const _0x2431f6 = [
+          "210JHkLpb",
+          "2592575PPmJup",
+          "pay7500",
+          "message",
+          "then",
+          "click",
+          "pay10000",
+          "2712584hBVzTD",
+          "finally",
+          "error",
+          "getElementById",
+          "4114152wiwTUG",
+          "You\x27re\x20blocked\x20for\x20an\x20amount\x20of\x20time",
+          "push",
+          "/api/create-checkout-session",
+          "209098LnHhcI",
+          "pay1000",
+          "6NVTOOm",
+          "innerHTML",
+          "179779aEirLI",
+          "99198tZvivP",
+          "6ZmACvF",
+          "json",
+          "length",
+          "location",
+          "catch",
+          "addEventListener",
+          "2575472KdiVOF",
+          "pay5000",
+        ];
+        _0x31d9 = function () {
+          return _0x2431f6;
+        };
+        return _0x31d9();
+      }
+      let disabled = ![],
+        timeouts = [];
+      document["getElementById"]("pay100")[_0x35c053(0xc5)](
+        _0x35c053(0xcd),
+        getEventListener(0x64)
+      ),
+        document["getElementById"]("pay250")[_0x35c053(0xc5)](
+          "click",
+          getEventListener(0xfa)
+        ),
+        document[_0x35c053(0xd2)]("pay500")["addEventListener"](
+          _0x35c053(0xcd),
+          getEventListener(0x1f4)
+        ),
+        document[_0x35c053(0xd2)](_0x35c053(0xbb))[_0x35c053(0xc5)](
+          _0x35c053(0xcd),
+          getEventListener(0x3e8)
+        ),
+        document[_0x35c053(0xd2)]("pay2500")[_0x35c053(0xc5)](
+          "click",
+          getEventListener(0x9c4)
+        ),
+        document["getElementById"](_0x35c053(0xc7))["addEventListener"](
+          _0x35c053(0xcd),
+          getEventListener(0x1388)
+        ),
+        document[_0x35c053(0xd2)](_0x35c053(0xca))[_0x35c053(0xc5)](
+          _0x35c053(0xcd),
+          getEventListener(0x1d4c)
+        ),
+        document[_0x35c053(0xd2)](_0x35c053(0xce))["addEventListener"](
+          _0x35c053(0xcd),
+          getEventListener(0x2710)
+        );
+      function _0x4043(_0x8b8e89, _0x3a65dc) {
+        const _0x31d9ed = _0x31d9();
+        return (
+          (_0x4043 = function (_0x40438e, _0x4f9743) {
+            _0x40438e = _0x40438e - 0xba;
+            let _0x33361 = _0x31d9ed[_0x40438e];
+            return _0x33361;
+          }),
+          _0x4043(_0x8b8e89, _0x3a65dc)
+        );
+      }
+      function getEventListener(_0x4b1ae1) {
+        return (_0x251afb) => {
+          const _0x489bf8 = _0x4043,
+            _0x55357b = document[_0x489bf8(0xd2)]("error");
+          _0x55357b[_0x489bf8(0xbd)] = "";
           if (disabled) {
-            errorElement.innerHTML = "Please wait ...";
+            _0x55357b[_0x489bf8(0xbd)] = "Please\x20wait\x20...";
             return;
           }
-
-          if (timeouts.length) {
-            timeouts.forEach((timeoutId) => clearTimeout(timeoutId));
-          }
-
-          disabled = true;
-
-          fetch("/api/create-checkout-session", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ amount }),
-          })
-            .then((res) => {
-              if (res.ok) {
-                return res.json();
-              }
-
-              if (res.status === 429) {
-                throw new Error("You're blocked for an amount of time");
-              }
+          timeouts[_0x489bf8(0xc2)] &&
+            timeouts["forEach"]((_0x52ebf3) => clearTimeout(_0x52ebf3)),
+            (disabled = !![]),
+            fetch(_0x489bf8(0xd6), {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON["stringify"]({ amount: _0x4b1ae1 }),
             })
-            .then(({ url }) => {
-              window.location = url;
-            })
-            .catch((err) => {
-              const errorElement = document.getElementById("error");
-              errorElement.innerHTML = err.message;
-
-              let timeoutId = setTimeout(() => {
-                errorElement.innerHTML = "";
-              }, 3000);
-
-              timeouts.push(timeoutId);
-            })
-            .finally(() => {
-              let timeoutId = setTimeout(() => {
-                disabled = false;
-              }, 1000);
-
-              timeouts.push(timeoutId);
-            });
+              [_0x489bf8(0xcc)]((_0x50f4a6) => {
+                const _0x4f713e = _0x489bf8;
+                if (_0x50f4a6["ok"]) return _0x50f4a6[_0x4f713e(0xc1)]();
+                if (_0x50f4a6["status"] === 0x1ad)
+                  throw new Error(_0x4f713e(0xd4));
+              })
+              [_0x489bf8(0xcc)](({ url: _0x1f35cd }) => {
+                const _0xd7a64e = _0x489bf8;
+                window[_0xd7a64e(0xc3)] = _0x1f35cd;
+              })
+              [_0x489bf8(0xc4)]((_0x49ad4e) => {
+                const _0x3c3adc = _0x489bf8,
+                  _0xc9ef03 = document["getElementById"](_0x3c3adc(0xd1));
+                _0xc9ef03[_0x3c3adc(0xbd)] = _0x49ad4e[_0x3c3adc(0xcb)];
+                let _0x163c5a = setTimeout(() => {
+                  _0xc9ef03["innerHTML"] = "";
+                }, 0xbb8);
+                timeouts[_0x3c3adc(0xd5)](_0x163c5a);
+              })
+              [_0x489bf8(0xd0)](() => {
+                const _0x5eff6f = _0x489bf8;
+                let _0x1ef070 = setTimeout(() => {
+                  disabled = ![];
+                }, 0x3e8);
+                timeouts[_0x5eff6f(0xd5)](_0x1ef070);
+              });
         };
       }
     </script>
