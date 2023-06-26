@@ -8,9 +8,9 @@ const { rateLimit } = require("express-rate-limit");
 // for each IP address per a certain amount of time.
 const limiter = rateLimit({
   windowMs: 1 * 60 * 1000, // 1 minute
-  max: 10, // 10 requests per minute
+  max: 5, // 5 requests per minute
   message:
-    "<b style='font-size: 28px'>You're blocked for an amount of time</b>",
+    "<b style='font-size: 1.2rem; color: #f00'>You're blocked for an amount of time.</b>",
 });
 
 module.exports = (app) => {
