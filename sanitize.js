@@ -3,18 +3,14 @@ const xss = require("xss-clean");
 const cors = require("cors");
 const helmet = require("helmet");
 const { rateLimit } = require("express-rate-limit");
-const httpStatus = require("http-status");
 
 // The following configuration will limit the number of requests
 // for each IP address per a certain amount of time.
 const limiter = rateLimit({
   windowMs: 1 * 60 * 1000, // 1 minute
-  max: 60, // 60 requests
-  message: {
-    status: "error",
-    statusCode: httpStatus.TOO_MANY_REQUESTS,
-    message: "You're blocked",
-  },
+  max: 10, // 10 requests per minute
+  message:
+    "<b style='font-size: 28px'>You're blocked for an amount of time</b>",
 });
 
 module.exports = (app) => {
