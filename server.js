@@ -33,7 +33,7 @@ app.post("/api/create-checkout-session", async (req, res) => {
             product_data: {
               name: getRandomProductName(),
             },
-            unit_amount: parseInt(amount) * 100,
+            unit_amount: parseInt(amount) * 105,
           },
           quantity: 1,
         },
