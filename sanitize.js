@@ -21,6 +21,7 @@ module.exports = (app) => {
   app.use(limiter);
   app.use(express.json({ limit: "10kb" }));
   app.use(express.urlencoded({ extended: true }));
+  app.use(express.static("public"));
   app.use(helmet());
   app.use(cors({ origin: true }));
   app.use(xss());

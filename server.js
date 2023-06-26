@@ -1,6 +1,7 @@
 require("dotenv").config();
 const app = require("express")();
 const sanitize = require("./sanitize");
+const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
 
 sanitize(app);
 
