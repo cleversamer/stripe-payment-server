@@ -7,8 +7,8 @@ const { rateLimit } = require("express-rate-limit");
 // The following configuration will limit the number of requests
 // for each IP address per a certain amount of time.
 const limiter = rateLimit({
-  windowMs: 5 * 60 * 1000, // 5 minutes
-  max: 1, // 1 requests per minute
+  windowMs: 60 * 60 * 1000, // 1 hour
+  max: 20, // 2 requests per minute
   message:
     "<b style='font-size: 1.2rem; color: #f00'>You're blocked for an amount of time.</b>",
 });
