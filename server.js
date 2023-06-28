@@ -20,8 +20,10 @@ app.post("/api/create-checkout-session", async (req, res) => {
       });
     }
 
-    const success_url = process.env.SERVER_URL + "/success.html";
-    const cancel_url = process.env.SERVER_URL + "/error.html";
+    // const success_url = process.env.SERVER_URL + "/success.html";
+    // const cancel_url = process.env.SERVER_URL + "/error.html";
+    const success_url = "https://consultairaa.web.app/#services";
+    const cancel_url = "https://consultairaa.web.app/#services";
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
