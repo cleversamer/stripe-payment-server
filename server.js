@@ -7,7 +7,7 @@ sanitize(app);
 
 app.post("/api/create-checkout-session", async (req, res) => {
   try {
-    const { amount } = req.body;
+    const { name, amount } = req.body;
     if (
       !amount ||
       typeof amount !== "number" ||
@@ -31,7 +31,7 @@ app.post("/api/create-checkout-session", async (req, res) => {
           price_data: {
             currency: "usd",
             product_data: {
-              name: getRandomProductName(),
+              name: name || getRandomProductName(),
             },
             unit_amount: parseInt(amount) * 105,
           },
